@@ -1,0 +1,35 @@
+## Specifica della classe Studente
+
+Ogni istanza di questa classe rappresenta uno studente
+
+### media_fino_a(d : Data): Reale in 18..30
+
+##### pre-condizioni:
+    - l'oggetto d'invocazione ("this") è coinvolto in almeno un link dell'associazione "esame" con valore del attributo "data" non successivo al valore "d"
+
+##### post-condizioni:
+    - l'operazione non modifica il livello estenzionale
+    - il valore del risultato ("result") è definito come segue:
+        - sia E l'insieme dei link di assoc. "x" che coinvolgono "this"
+            tali da avere un valore per l'attributo "y" non successivo al valore "d"
+
+
+=====================================================
+
+
+## Specifica della classe Corso
+
+Ogni istanza di questa classe rappresenta uno Corso
+
+### voto_medio(): Reale in 18..30
+
+##### pre-condizioni:
+    - l'oggetto d'invocazione ("this") è coinvolto in almeno un link dell'associazione "esame"
+
+##### post-condizioni:
+    - l'operazione non modifica il livello estenzionale
+    - [......]
+
+=====================================================
+
+[...........]
