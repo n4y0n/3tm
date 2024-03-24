@@ -42,3 +42,12 @@
     5.3. orari di appertura, nella forma di una mappa che associa ad ogni giorno della settimana un insieme di fascie orarie dove ogni fascia oraria è definita come una coppia di orari
     
 
+6. Requisiti cliente
+    6.1. nome : string
+    6.2. cognome : string
+    6.3. data_nascita : Data
+    6.4. indirizzo : Indirizzo
+
+7. Requisiti prenotazione
+    7.1. istante : DataOra
+    7.2. numero posti prenotati : int > 0

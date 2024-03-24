@@ -1,19 +1,16 @@
-Specifica dei tipi di dato
+## Specifica dei tipi di dato
 
+- TipoDestinazione = {romantica, divertente}
 
-TipoDestinazione = {romantica, divertente}
+- Indirizzo = ( via: string, civico: string, cap: Cap)
 
+- Cap = (d1: 0..9, d2: 0..9, d3: 0..9, d4: 0..9, d5: 0..9)
 
-DeltaDataOra = (
-	giorno: Intero > 0,
-	orario: Ora	
-)
-	Operazioni del tipo di dato DeltaDataOra:
+- DeltaDataOra = ( giorno: Intero > 0, orario: Ora )
 
-		< (x:DeltaDataOra, y:DeltaDataOra) : Boolano
-			pre: nessuna
-			postcondizioni:
-				result = true se e solo se:
-					(x.giorno < y.giorno)
-					oppure
-					(x.giorno = y.giorno e x.orario < y.orario)
+== Operazioni del tipo di dato "DeltaDataOra":
+
+< (x:DeltaDataOra, y:DeltaDataOra) : Boolano
+	pre: nessuna
+	postcondizioni:
+		result = true <=> (x.giorno < y.giorno) || (x.giorno = y.giorno e x.orario < y.orario)

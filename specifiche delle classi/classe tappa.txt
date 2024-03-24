@@ -21,7 +21,6 @@ n_ordine() : Intero > 0
 
 Vincoli esterni
 
-
 [V.Tappa.date]
 	Per ogni istanza t:Tappa, deve essere:
 		t.arrivo < t.ripartenza

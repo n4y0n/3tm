@@ -1,0 +1,8 @@
+Specifica classe Destinzione
+
+nome : string
+tipo : TipoDestinazione / 0..*
+
+Operazioni
+
+Vincoli esterni

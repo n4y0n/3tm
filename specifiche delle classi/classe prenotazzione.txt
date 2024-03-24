@@ -1,0 +1,15 @@
+Specifica classe Prenotazione
+
+istante : DataOra
+posti_prenotati : int > 0
+
+Operazioni
+
+
+Vincoli esterni
+
+[V.Prenotazione.posti_prenotati]
+    Per ogni istanza di p:Prenotazione sia:
+        - N la nave ("croc_nave") a cui e assegnata la crociera specificata da "croc_pren"
+
+    p.posti_prenotati <= N.capienza

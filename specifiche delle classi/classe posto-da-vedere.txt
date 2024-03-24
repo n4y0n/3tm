@@ -1,0 +1,8 @@
+Specifica classe PostoDaVedere
+
+nome : string
+descrizione : string
+
+Operazioni
+
+Vincoli esterni

@@ -1,0 +1,11 @@
+Specifica classe Cliente
+
+nome : string
+cognome : string
+data_nascita : Data
+indirizzo : Indirizzo
+
+Operazioni
+
+
+Vincoli esterni

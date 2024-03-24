@@ -1,0 +1,10 @@
+Specifica classe Nave
+
+nome : string {id}
+confort : 3..5
+capienza : int > 1
+
+Operazioni
+
+
+Vincoli esterni

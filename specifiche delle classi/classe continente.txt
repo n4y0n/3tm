@@ -1,0 +1,7 @@
+Specifica classe Continente
+
+nome : string {id}
+
+Operazioni
+
+Vincoli esterni
