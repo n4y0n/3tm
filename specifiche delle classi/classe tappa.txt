@@ -1,5 +1,8 @@
 Specifica classe Tappa
 
+arrivo : DeltaDataOra {id}
+ripartenza : DeltaDataOra
+
 
 Operazioni
 
