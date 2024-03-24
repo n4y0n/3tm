@@ -1,2 +1,7 @@
 *.vpp.bak*
 *.vpp.lck*
+*.synctex.gz
+*.log
+*.fdb_latexmk
+*.aux
+*.fls
