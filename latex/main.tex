@@ -1,12 +1,14 @@
 \documentclass[a4paper]{scrartcl}
 \usepackage[landscape]{geometry}
 \usepackage[skip=3ex]{parskip}
-\usepackage{amsmath}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{./tikz-uml}
 \usepackage{fancyhdr}
-\usepackage{float}
 \usepackage{titling}
+\usepackage{float}
 
 \usetikzlibrary{positioning}
 
@@ -167,4 +169,194 @@ Di ogni itinerario mi interessa:
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage\section{Specifiche delle Classi}\vskip2em
+
+\subsection{Classe Crocieta}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{codice} : string \{id\}
+    \item \texttt{inizio} : Data
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item \texttt{fine() : Data}
+    \begin{itemize}
+        \item \textbf{Pre-condizioni:} nessuna
+        \item \textbf{Post-condizioni:} \\
+        Sia $i$ un Itinerario tale che $(\text{this}, i)$ è un oggetto di \texttt{croc\_itin}. \\
+        Sia $x$ un DeltaDataOra il valore dell'attributo 'istante' dell'unico link di associazione \texttt{arrivo\_itin} in cui $i$ è coinvolto. \\
+        $\text{result} = \text{this.inizio} + x.\text{giorno}$ giorni.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item $[V.\text{Crociera.date}]$ \\
+    Per ogni oggetto $c$ di \texttt{Crociera} deve essere: $c.\text{inizio} \leq c.\text{fine}()$
+\end{itemize}
+
+% =================================================================================================
+
+\subsection{Classe Cliente}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{nome} : string
+    \item \texttt{cognome} : string
+    \item \texttt{data\_nascita} : Data
+    \item \texttt{indirizzo} : Indirizzo
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item Nessuno specificato.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe Continente}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{nome} : string \{id\}
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item Nessuno specificato.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe Destinazione}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{nome} : string
+    \item \texttt{tipo} : TipoDestinazione / 0..*
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item Nessuno specificato.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe Itinerario}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item Nessuno specificato.
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item $[V.Itinerario.arrivo\_dopo\_ultima\_tappa]$: Per ogni itinerario $i$, per ogni tappa $t$ in $i$, l'orario di arrivo di $t$ deve essere dopo l'orario di partenza dell'itinerario.
+    \item $[V.Itinerario.prima\_tappa\_dopo\_partenza]$: Per ogni itinerario $i$, la prima tappa deve avere l'orario di arrivo successivo all'orario di partenza dell'itinerario.
+    \item $[V.Itinerario.arrivo\_dopo\_partenza\_se\_senza\_tappe]$: Per ogni itinerario $i$, se non ci sono tappe, l'orario di arrivo deve essere successivo all'orario di partenza.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe Nave}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{nome} : string \{id\}
+    \item \texttt{confort} : 3..5
+    \item \texttt{capienza} : int > 1
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item Nessuno specificato.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe PostoDaVedere}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{nome} : string
+    \item \texttt{descrizione} : string
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item Nessuno specificato.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe Prenotazione}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{istante} : DataOra
+    \item \texttt{nPosti} : int > 0
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item Nessuna specificata.
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item $[V.Prenotazione.nPosti]$: Il numero di posti prenotati non può superare la capacità della nave associata alla crociera della prenotazione.
+\end{itemize}
+
+% =================================================================================================
+\subsection{Classe Tappa}
+
+\textbf{Attributi:}
+\begin{itemize}
+    \item \texttt{arrivo} : DeltaDataOra \{id\}
+    \item \texttt{ripartenza} : DeltaDataOra
+\end{itemize}
+
+\textbf{Operazioni:}
+\begin{itemize}
+    \item \texttt{n\_ordine() : Intero > 0}
+        \begin{itemize}
+            \item \textbf{Pre-condizioni:} Nessuna.
+            \item \textbf{Post-condizioni:} Il numero di ordine della tappa all'interno dell'itinerario, considerando le tappe precedenti.
+        \end{itemize}
+\end{itemize}
+
+\textbf{Vincoli esterni:}
+\begin{itemize}
+    \item $[V.Tappa.date]$: L'orario di arrivo deve essere precedente all'orario di partenza.
+\end{itemize}
+
+
 \end{document}
