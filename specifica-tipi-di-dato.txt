@@ -13,4 +13,4 @@
 < (x:DeltaDataOra, y:DeltaDataOra) : Boolano
 	pre: nessuna
 	postcondizioni:
-		result = true <=> (x.giorno < y.giorno) || (x.giorno = y.giorno e x.orario < y.orario)
+		result = true se e solo se (x.giorno < y.giorno) oppure (x.giorno = y.giorno e x.orario < y.orario)
