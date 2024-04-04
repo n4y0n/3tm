@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgf-uml}
+
+\begin{document}
+
+\title{Cruise Booking System Use Case Diagram}
+\author{Your Name}
+\date{\today}
+\maketitle
+
+\section{Use Case Diagram}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{umlsystem}[x=4, fill=gray!10]{Cruise Booking System}
+            \umlusecase[name=client,x=0,y=0]{Client}
+            \umlusecase[name=bookingstaff,x=8,y=0]{Booking Staff}
+            \umlusecase[name=checkavailability,x=4,y=-2]{Check Availability}
+            \umlusecase[name=makebooking,x=4,y=-4]{Make Booking}
+            \umlusecase[name=rejectbooking,x=8,y=-4]{Reject Booking}
+            \umlinherit{bookingstaff}{client}
+            \umlinclude{checkavailability}{bookingstaff}
+            \umlinclude{makebooking}{bookingstaff}
+            \umlinclude{rejectbooking}{bookingstaff}
+        \end{umlsystem}
+        \umlactor{Client}
+        \umlactor[y=-3]{Booking Staff}
+        \umlrelation{Client}{checkavailability}
+        \umlrelation{Client}{makebooking}
+        \umlrelation{Booking Staff}{rejectbooking}
+    \end{tikzpicture}
+    \caption{Use Case Diagram for Cruise Booking System}
+\end{figure}
+
+\end{document}
