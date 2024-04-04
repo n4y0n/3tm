@@ -1,0 +1,16 @@
+L’Ufficio Marketing deve poter calcolare l’età media dei clienti che hanno prenotato,
+in un dato periodo, almeno una crociera che prevede una destinazione esotica
+(ovvero che si trova in un continente diverso dall’Europa).
+
+pre-condizioni:
+   data_inizio = indica l'inizio del range temporale in cui effettuare la ricerca
+   data_fine   = indica la fine del range temporale in cui effettuare la ricerca
+   dest_esotiche = tutte le destinazioni con una associazione (cont_dest) con almeno un continente esotico (= diverso da europa)
+   itinerari_esotici = tutti gli itinerari che hanno una associazione (partenza_itin e arrivo_itin) con dest_esotiche
+   crociere_esotiche = tutte le crociere che hanno una associazione (croc_itin) con itinerari_esotici
+   prenotazioni_c_e =  tutte le prenotazioni che hanno una associazione (croc_pren) con crociere_esotiche
+   clienti_c_e = tutti i clienti che hanno una associazione cliente_pren) con prenotazioni_c_e
+   etaMedia = (somma di tutte le eta (calcolate avendo la data di nascita) di clienti_c_e) / il numero di tuple
+
+post-condizioni:
+   result = etaMedia

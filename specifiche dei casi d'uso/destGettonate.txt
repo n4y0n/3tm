@@ -1,0 +1,22 @@
+L’Ufficio Marketing deve poter calcolare la percentuale delle destinazioni da considerarsi gettonate in un periodo dato.
+Una destinazione va considerata gettonata in un certo periodo se è stata raggiunta, in quel periodo, da
+almeno dieci crociere di luna di miele, oppure da almeno quindici crociere per famiglie.
+
+pre-condizioni:
+   data_inizio = indica l'inizio del range temporale in cui effettuare la ricerca
+   data_fine   = indica la fine del range temporale in cui effettuare la ricerca
+   c_luna_miele = tutte le crociere luna di miele
+   c_famiglie   = tutte le crociere per famiglie
+   crociere_l_m = tutte le crociere luna di miele che hanno una associazione (croc_itin) con itinerari
+   crociere_f   = tutte le crociere per famiglie che hanno una associazione (croc_itin) con itinerari
+   destinazioni = tutte le destinazioni che hanno una associazione (partenza_itin e arrivo_itin) con crociere_l_m e crociere_f
+
+post-condizioni:
+   PER OGNI d' istanza di destinazioni
+      nlm = numero di istanze di crociere_l_m che hanno d' come destinazion
+      nf = numero di istanze di crociere_f che hanno d' come destinazione
+
+      SE(nlm >= 10 || nf >= 15)
+         dest_gettonate = numero di destinazioni considerate gettonate aumentato
+   FINE PER OGNI
+   return = (dest_gettonate * 100)/numero di tuple di destinazione

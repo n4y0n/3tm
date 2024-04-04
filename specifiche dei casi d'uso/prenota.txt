@@ -1,0 +1,14 @@
+pre-condizioni:
+   sia cl' il cliente che ha avviato la procedura
+   sia p' la prenotazione relativa a cl'
+   p_c = n di prenotazioni confermate per la crociera c
+   n_posti_prenotati = numero totale delle prenotazioni relativfe alla crociera
+   n = nave relativa alla crociera c
+   posti_totali = n.capienza
+
+post-condizioni:
+   SE((n_posti_prenotati + p') < posti_totali)
+      inserisci le informazioni correnti cliente-prenotazione nella base dati
+   ALTRIMENTI
+      ritorna un errore all'utente non inserendo informazioni nella base dati
+
