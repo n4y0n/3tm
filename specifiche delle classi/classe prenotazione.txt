@@ -5,7 +5,6 @@ nPosti : int > 0
 
 Operazioni
 
-
 Vincoli esterni
 
 [V.Prenotazione.nPosti]
